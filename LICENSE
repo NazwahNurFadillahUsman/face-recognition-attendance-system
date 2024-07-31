@@ -1,21 +1,85 @@
-MIT License
+# Sistem Pengenalan Wajah untuk Absensi Menggunakan Computer Vision
 
-Copyright (c) 2024 NazwahNurFadillahUsman
+Proyek ini bertujuan untuk mengembangkan sistem absensi otomatis menggunakan teknologi pengenalan wajah. Sistem ini memanfaatkan computer vision untuk mendeteksi dan mengenali wajah karyawan dan mencatat kehadiran mereka secara otomatis.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+## Fitur
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+- **Pengenalan Wajah**: Menggunakan model deep learning untuk mendeteksi dan mengenali wajah karyawan.
+- **Absensi Otomatis**: Mencatat waktu kedatangan dan kepulangan karyawan secara otomatis.
+- **Database Karyawan**: Menyimpan informasi karyawan termasuk foto wajah untuk proses pelatihan model.
+- **Laporan Kehadiran**: Menghasilkan laporan kehadiran harian, mingguan, dan bulanan.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+## Teknologi yang Digunakan
+
+- Python
+- OpenCV
+- dlib
+- Face_recognition library
+- SQLite (atau database lain yang diinginkan)
+- Flask (opsional, untuk antarmuka web)
+
+## Instalasi
+
+1. **Clone repository ini**:
+
+    ```bash
+    git clone https://github.com/username/repo-name.git
+    cd repo-name
+    ```
+
+2. **Buat environment virtual dan aktifkan**:
+
+    ```bash
+    python -m venv env
+    source env/bin/activate  # untuk Linux/macOS
+    .\env\Scripts\activate   # untuk Windows
+    ```
+
+3. **Instal dependensi**:
+
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+4. **Persiapkan database**:
+
+    ```bash
+    python setup_database.py
+    ```
+
+5. **Jalankan aplikasi**:
+
+    ```bash
+    python main.py
+    ```
+
+## Penggunaan
+
+1. **Menambahkan Karyawan**: Tambahkan data karyawan termasuk foto wajah mereka ke dalam database.
+2. **Mulai Pengenalan Wajah**: Jalankan aplikasi dan arahkan kamera ke wajah karyawan untuk mencatat kehadiran mereka.
+3. **Lihat Laporan**: Lihat laporan kehadiran melalui antarmuka yang disediakan atau akses langsung ke database.
+
+## Struktur Proyek
+
+```plaintext
+.
+├── README.md
+├── requirements.txt
+├── main.py
+├── setup_database.py
+├── models
+│   ├── face_recognition_model.dat
+│   └── ...
+├── static
+│   ├── css
+│   ├── js
+│   └── images
+├── templates
+│   ├── index.html
+│   └── ...
+├── data
+│   ├── employees.db
+│   └── ...
+└── utils
+    ├── face_recognition.py
+    └── ...
